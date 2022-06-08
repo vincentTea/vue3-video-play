@@ -75,7 +75,7 @@ const state = reactive({
 const menuList = [
   { label: "视频色彩调整", key: "filter" },
   { label: "快捷键说明", key: "hotkey" },
-  { label: "复制视频网址", key: "copy" },
+  // { label: "复制视频网址", key: "copy" },
   { label: "版本：" + version, key: "version" },
 ];
 const hotkeyList = [
@@ -146,10 +146,10 @@ const contextmenuHide = (ev) => {
     state.dialogTitle = ev.path[0].innerText;
     state.dialogType = keycode;
     if (keycode == "copy") {
-      let copyText = document.querySelector(".d-player-copyText");
-      copyText.value = window.location.href;
-      copyText.select();
-      document.execCommand("copy");
+      // let copyText = document.querySelector(".d-player-copyText");
+      // copyText.value = window.location.href;
+      // copyText.select();
+      // document.execCommand("copy");
       state.dialogType = "";
     } else if (keycode == "version") {
       state.dialogType = "";

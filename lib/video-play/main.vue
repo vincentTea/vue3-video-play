@@ -339,7 +339,7 @@ videoEvents["onDurationchange"] = (ev) => {
 
 // 缓冲下载中
 videoEvents["onProgress"] = (ev) => {
-  console.log("缓冲中...");
+  // console.log("缓冲中...");
   emits("progress", ev);
   let duration = ev.target.duration; // 媒体总长
   let length = ev.target.buffered;
@@ -543,7 +543,7 @@ const init = (): void => {
       Hls.loadSource(props.src);
       // 加载可用质量级别
       Hls.on('hlsManifestParsed', (ev, data) => {
-        console.log(data)
+        // console.log(data)
         state.currentLevel = data.level
         state.qualityLevels = data.levels || []
         // state.dVideo.load();
@@ -551,15 +551,15 @@ const init = (): void => {
     })
 
     Hls.on('hlsLevelSwitching', (ev, data) => {
-      console.log(data)
+      // console.log(data)
       // state.qualityLevels = Hls.levels || []
-      console.log('LEVEL_SWITCHING')
+      // console.log('LEVEL_SWITCHING')
       // state.dVideo.load();
     });
     Hls.on('hlsLevelSwitched', (ev, data) => {
       state.currentLevel = data.level
       // state.qualityLevels = Hls.levels || []
-      console.log('LEVEL_SWITCHED')
+      // console.log('LEVEL_SWITCHED')
       // state.dVideo.load();
     });
   }
@@ -573,7 +573,7 @@ watch(() => props.src, () => {
 }, { immediate: true })
 onMounted(() => {
   state.dVideo = refdVideo;
-  inputFocusHandle();
+  // inputFocusHandle();
 });
 defineExpose({
   play: playHandle, //播放

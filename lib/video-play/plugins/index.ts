@@ -47,5 +47,5 @@ export const defineProps = {
         type: Array as PropType<Array<string>>,
         default: ['audioTrack', 'quality', 'speedRate', 'volume', 'setting', 'pip', 'pageFullScreen', 'fullScreen']
     }, //是否显示控制器
-    preload: { type: String, default: 'auto' }, //预加载 
+    preload: { type: String, default: 'none' }, //预加载
 }
